@@ -1,0 +1,51 @@
+        // math 对象
+        var arr = [12,16,19,24];
+        var max = Math.max.apply(null, arr);
+        console.log(max);
+        // 什么参数都不写，得到此时此刻的时间和日期
+        var d1 = new Date();
+        console.log(d1);
+        console.log(typeof d1);
+        // 日期对象的常见方法
+        var d2 = new Date();
+        console.log("日期", d2.getDate());
+        console.log("星期", d2.getDay());
+        console.log("月份", d2.getMonth());
+        console.log("年份", d2.getFullYear());
+        console.log("小时", d2.getHours());
+        console.log("分钟", d2.getMinutes());
+        console.log("秒数",d2.getSeconds());
+        // 时间戳
+        // 日期对象
+        var d = new Date();
+        // 获得时间戳
+        var timestamp1 = d.getTime();
+        var timestamp2 = Date.parse(d);
+        console.log(timestamp1);
+        console.log(timestamp2);
+        // 如何把时间戳变回为日期对象
+        var dd = new Date(1646681067703);
+        console.log(dd);
+        console.log(dd.getDay());
+        console.log(dd.getMonth());
+        console.log(dd.getFullYear());
+        console.log(dd.getHours());
+
+        function newDate() {
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth()+1;
+        var date = d.getDate();
+        var day = d.getDay();
+        var hour = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        
+        var result = ("今天是"+ year +"年，"+ month + "月" + date+"日"+arr[day]+"<br>"+hour+":"+minutes+":"+seconds);
+        
+        return result;
+    };
+    
+    document.write(newDate());
